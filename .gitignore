@@ -83,6 +83,10 @@ android-sdk/ -e
 *.env.*
 !.env.example
 
+# Backend uploads (if any)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
 # Docker
 .docker/
 docker-compose.override.yml
