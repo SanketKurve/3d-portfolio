@@ -379,13 +379,14 @@ async def get_dashboard_stats(current_user: dict = Depends(get_current_admin)):
 app.include_router(api_router)
 app.include_router(admin_router)
 
-# CORS middleware
+# CORS middleware - More permissive for debugging
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_origins=["*"],  # Temporarily allow all origins for debugging
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     allow_headers=["*"],
+    max_age=86400,  # Cache preflight for 24 hours
 )
 
 @app.on_event("shutdown")
