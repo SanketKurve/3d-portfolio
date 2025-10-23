@@ -1,0 +1,50 @@
+{
+  "name": "portfolio-backend",
+  "version": "1.0.0",
+  "description": "FastAPI backend for 3D Portfolio application",
+  "main": "server.py",
+  "scripts": {
+    "start": "uvicorn server:app --host 0.0.0.0 --port 8001 --reload",
+    "dev": "uvicorn server:app --host 0.0.0.0 --port 8001 --reload",
+    "seed": "python seed_data.py",
+    "install-deps": "pip install -r requirements.txt",
+    "test": "pytest",
+    "lint": "flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics",
+    "lint-fix": "black . && isort .",
+    "type-check": "mypy .",
+    "format": "black . && isort .",
+    "clean": "find . -type f -name '*.pyc' -delete && find . -type d -name '__pycache__' -delete",
+    "docker-build": "docker build -t portfolio-backend .",
+    "docker-run": "docker run -p 8001:8001 portfolio-backend"
+  },
+  "keywords": [
+    "fastapi",
+    "portfolio",
+    "backend",
+    "mongodb",
+    "python"
+  ],
+  "author": "Sanket Kurve",
+  "license": "MIT",
+  "dependencies": {
+    "python-dotenv": "^1.0.1"
+  },
+  "devDependencies": {
+    "pytest": "^8.0.0",
+    "black": "^24.1.1",
+    "isort": "^5.13.2",
+    "flake8": "^7.0.0",
+    "mypy": "^1.8.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanket200511/3D-Portfolio-Eme2"
+  },
+  "bugs": {
+    "url": "https://github.com/sanket200511/3D-Portfolio-Eme2/issues"
+  },
+  "homepage": "https://github.com/sanket200511/3D-Portfolio-Eme2#readme"
+}
