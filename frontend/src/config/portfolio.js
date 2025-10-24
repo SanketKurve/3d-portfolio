@@ -85,33 +85,14 @@ const portfolioConfig = {
       year: 2024,
       category: "Web App",
       status: "completed"
-    },
-    {
-      id: 999,
-      title: "Your Next Project",
-      tagline: "Coming Soon...",
-      description: "Stay tuned for more amazing projects!",
-      tech: [],
-      features: [],
-      status: "planned"
     }
   ],
   
   // ===== ADD CERTIFICATES HERE =====
   certificates: [
-    {
-      id: 1,
-      name: "Certificate Placeholder",
-      issuer: "Add your certificates here",
-      date: "2024",
-      description: "Click 'Edit Mode' (Press E) to see how to add your certificates",
-      credentialId: null,
-      verifyUrl: null,
-      status: "placeholder"
-    }
-    // ADD MORE CERTIFICATES LIKE THIS:
+    // ADD CERTIFICATES LIKE THIS:
     // {
-    //   id: 2,
+    //   id: 1,
     //   name: "AWS Certified Developer",
     //   issuer: "Amazon Web Services",
     //   date: "2024",

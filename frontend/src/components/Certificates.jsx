@@ -53,32 +53,28 @@ const Certificates = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {loading ? (
             <div className="col-span-full text-center text-gray-400">Loading certificates...</div>
-          ) : (
+          ) : certificates.length > 0 ? (
             certificates.map((cert, index) => (
             <motion.div
               key={cert.id}
-              className={`relative p-6 bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0f] rounded-xl overflow-hidden group ${
-                cert.status === 'placeholder' ? 'border-2 border-dashed border-[#00fff2]/20' : 'border border-[#00fff2]/30'
-              }`}
+              className="relative p-6 bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0f] rounded-xl overflow-hidden group border border-[#00fff2]/30"
               initial={{ opacity: 0, y: 30, scale: 0.9 }}
               animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.03, borderColor: 'rgba(0, 255, 242, 0.6)' }}
             >
               {/* Achievement Unlocked Badge */}
-              {cert.status !== 'placeholder' && (
-                <motion.div
-                  className="absolute top-4 right-4 px-3 py-1 bg-[#00ff88]/20 border border-[#00ff88] rounded-full"
-                  initial={{ scale: 0, rotate: -180 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 0.5 + index * 0.1, type: 'spring' }}
-                >
-                  <span className="text-[#00ff88] text-xs font-semibold flex items-center gap-1">
-                    <Award size={12} />
-                    Verified
-                  </span>
-                </motion.div>
-              )}
+              <motion.div
+                className="absolute top-4 right-4 px-3 py-1 bg-[#00ff88]/20 border border-[#00ff88] rounded-full"
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ delay: 0.5 + index * 0.1, type: 'spring' }}
+              >
+                <span className="text-[#00ff88] text-xs font-semibold flex items-center gap-1">
+                  <Award size={12} />
+                  Verified
+                </span>
+              </motion.div>
 
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#00fff2]/0 via-[#00fff2]/10 to-[#00fff2]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -122,7 +118,7 @@ const Certificates = () => {
                 )}
 
                 {/* Verify Button */}
-                {cert.verifyUrl && cert.status !== 'placeholder' ? (
+                {cert.verifyUrl ? (
                   <motion.a
                     href={cert.verifyUrl}
                     target="_blank"
@@ -134,10 +130,6 @@ const Certificates = () => {
                     <span>Verify Certificate</span>
                     <ExternalLink size={14} />
                   </motion.a>
-                ) : cert.status === 'placeholder' ? (
-                  <div className="px-4 py-2 bg-[#1a1a2e] border border-[#00fff2]/20 text-[#00fff2]/50 rounded-lg text-sm text-center">
-                    Add your certificate here
-                  </div>
                 ) : null}
               </div>
 
@@ -150,20 +142,16 @@ const Certificates = () => {
               />
             </motion.div>
             ))
+          ) : (
+            <div className="col-span-full text-center text-gray-400">
+              <Award className="mx-auto mb-4 text-6xl text-gray-600" />
+              <p className="text-xl mb-2">No certificates yet</p>
+              <p className="text-sm">Add your certificates through the admin panel</p>
+            </div>
           )}
         </div>
 
-        {/* Add Certificate Hint */}
-        <motion.div
-          className="mt-12 text-center"
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.8 }}
-        >
-          <p className="text-gray-500 text-sm">
-            Press <kbd className="px-2 py-1 bg-[#1a1a2e] border border-[#00fff2]/20 rounded text-[#00fff2] font-mono">E</kbd> for Edit Mode to see how to add your certificates
-          </p>
-        </motion.div>
+
       </div>
 
       {/* Background decoration */}

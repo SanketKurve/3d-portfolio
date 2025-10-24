@@ -241,7 +241,7 @@ const Projects = () => {
     const fetchProjects = async () => {
       try {
         const response = await axios.get(`${BACKEND_URL}/api/projects`);
-        setProjects(response.data.filter(p => p.visible !== false));
+        setProjects(response.data.filter(p => p.visible !== false && p.status !== 'planned'));
         setLoading(false);
       } catch (error) {
         console.error('Failed to fetch projects:', error);
