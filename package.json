@@ -1,0 +1,21 @@
+{
+  "name": "3d-portfolio-mern",
+  "version": "1.0.0",
+  "description": "MERN Stack Portfolio Website",
+  "scripts": {
+    "install": "cd frontend && yarn install",
+    "dev": "cd backend-express && npm install && node seed-data.js && node server.js",
+    "build": "cd frontend && yarn build",
+    "start": "cd backend-express && node server.js",
+    "seed": "cd backend-express && node seed-data.js",
+    "lint": "cd frontend && yarn lint",
+    "test": "cd frontend && yarn test",
+    "vercel-deploy": "vercel --prod"
+  },
+  "keywords": ["portfolio", "3d", "react", "express", "mern"],
+  "author": "Sanket Kurve",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

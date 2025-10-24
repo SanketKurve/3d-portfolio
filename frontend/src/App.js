@@ -6,8 +6,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PortfolioHome from './pages/PortfolioHome';
 
 // Import Admin components
-import AdminLogin from './admin/AdminLogin';
-import AdminDashboard from './admin/AdminDashboard';
 import AdminPanel from './admin2/AdminPanel';
 
 // Import Auth Context
@@ -29,9 +27,7 @@ function App() {
             <Route path="/" element={<PortfolioHome />} />
 
             {/* Admin Routes */}
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin/*" element={<AdminDashboard />} />
-            <Route path="/admin2/*" element={<AdminPanel />} />
+            <Route path="/admin/*" element={<AdminPanel />} />
           </Routes>
         </BrowserRouter>
       </div>
