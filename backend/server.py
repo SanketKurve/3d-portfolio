@@ -392,3 +392,8 @@ app.add_middleware(
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+
+# Add root route for health checks
+@app.get("/")
+async def root_health():
+    return {"message": "Portfolio API is running", "version": "1.0.0", "status": "healthy"}

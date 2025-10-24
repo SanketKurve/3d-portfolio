@@ -87,11 +87,7 @@ android-sdk/ -e
 backend/uploads/*
 !backend/uploads/.gitkeep
 
-# Docker
-.docker/
-docker-compose.override.yml
-**/docker-data/
-**/volumes/
+# Docker (removed)
 
 # Data directories
 data/

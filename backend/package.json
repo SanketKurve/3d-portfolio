@@ -13,9 +13,7 @@
     "lint-fix": "black . && isort .",
     "type-check": "mypy .",
     "format": "black . && isort .",
-    "clean": "find . -type f -name '*.pyc' -delete && find . -type d -name '__pycache__' -delete",
-    "docker-build": "docker build -t portfolio-backend .",
-    "docker-run": "docker run -p 8001:8001 portfolio-backend"
+    "clean": "find . -type f -name '*.pyc' -delete && find . -type d -name '__pycache__' -delete"
   },
   "keywords": [
     "fastapi",
