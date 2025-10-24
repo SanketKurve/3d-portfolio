@@ -8,6 +8,7 @@ import PortfolioHome from './pages/PortfolioHome';
 // Import Admin components
 import AdminLogin from './admin/AdminLogin';
 import AdminDashboard from './admin/AdminDashboard';
+import AdminPanel from './admin2/AdminPanel';
 
 // Import Auth Context
 import { AuthProvider } from './contexts/AuthContext';
@@ -30,6 +31,7 @@ function App() {
             {/* Admin Routes */}
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin/*" element={<AdminDashboard />} />
+            <Route path="/admin2/*" element={<AdminPanel />} />
           </Routes>
         </BrowserRouter>
       </div>

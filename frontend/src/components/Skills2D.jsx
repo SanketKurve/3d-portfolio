@@ -113,10 +113,10 @@ const Skills = () => {
                     rotate: [0, 360],
                   }}
                   transition={{
-                    duration: 20,
+                    duration: 8,
                     repeat: Infinity,
                     ease: "linear",
-                    opacity: { duration: 1, delay: index * 0.1 }
+                    opacity: { duration: 0.5, delay: index * 0.05 }
                   }}
                   whileHover={{ scale: 1.2, zIndex: 20 }}
                 >
@@ -154,7 +154,7 @@ const Skills = () => {
                         style={{ backgroundColor: categoryColors[category] }}
                         initial={{ width: 0 }}
                         animate={inView ? { width: `${skill.level}%` } : {}}
-                        transition={{ duration: 1, delay: catIndex * 0.1 }}
+                        transition={{ duration: 0.8, delay: catIndex * 0.05, ease: "easeOut" }}
                       />
                     </div>
                   </div>
