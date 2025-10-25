@@ -7,28 +7,15 @@
       "config": {
         "distDir": "build"
       }
-    },
-    {
-      "src": "backend-express/server.js",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/backend-express/server.js"
-    },
     {
       "src": "/(.*)",
       "dest": "/frontend/$1"
     }
   ],
-  "functions": {
-    "backend-express/server.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "outputDirectory": "frontend/build",
+  "installCommand": "npm install",
+  "buildCommand": "cd frontend && npm install && npm run build"
 }

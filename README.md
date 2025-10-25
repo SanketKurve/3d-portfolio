@@ -55,7 +55,7 @@ vercel --prod
 │   └── seed-data.js        # Database seeding
 ├── frontend/               # React frontend
 │   ├── src/
-│   │   ├── admin2/        # Admin panel
+│   │   ├── admin2/        # New optimized admin panel
 │   │   ├── components/    # React components
 │   │   ├── services/      # API services
 │   │   └── pages/         # Page components
@@ -68,7 +68,7 @@ vercel --prod
 
 ### Development (.env)
 ```env
-MONGO_URL=mongodb://localhost:27017/portfolio_db
+MONGO_URL=mongodb+srv://username:password@cluster.mongodb.net/portfolio_db
 JWT_SECRET=your-secret-key-here
 CORS_ORIGINS=http://localhost:3000
 ```
@@ -83,10 +83,10 @@ NODE_ENV=production
 ## 📋 Features
 
 - ✅ **Responsive Design** - Works on all devices
-- ✅ **Admin Panel** - Full CRUD operations for content
+- ✅ **New Admin Panel** - Optimized with better UX
 - ✅ **Contact Form** - With email notifications
-- ✅ **Skills Animation** - Interactive 3D skill visualization
-- ✅ **Project Showcase** - With filtering and search
+- ✅ **Fast Skills Animation** - 8-second orbit instead of 20
+- ✅ **Project Showcase** - Clean display without placeholders
 - ✅ **Certificate Management** - Upload and verify certificates
 - ✅ **Message Management** - Admin inbox for contact forms
 - ✅ **JWT Authentication** - Secure admin access

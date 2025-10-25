@@ -1,7 +1,9 @@
 import axios from 'axios';
 
-// For MERN stack deployment, backend will be on same domain
-const API_BASE = process.env.NODE_ENV === 'production' ? '' : process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+// Backend API configuration
+const API_BASE = process.env.NODE_ENV === 'production'
+  ? 'https://your-backend.onrender.com'
+  : process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
 export const API = `${API_BASE}/api`;
 
 const api = axios.create({
